@@ -1,8 +1,12 @@
 #include "sort.h"
 
+/**
+ * insertion_sort_list - insertion algorithm
+ * @list: list
+ */
 void insertion_sort_list(listint_t **list)
 {
-	listint_t *curr_node, *cmp_node, *last_ord_node=NULL;
+	listint_t *curr_node, *cmp_node, *last_ord_node = NULL;
 
 	if (!list || *list == NULL)
 		return;
@@ -28,7 +32,7 @@ void insertion_sort_list(listint_t **list)
 				curr_node->next->prev = cmp_node;
 			curr_node->next = cmp_node;
 			cmp_node->prev = curr_node;
-		
+
 			print_list(*list);
 
 			if (curr_node->prev == NULL)
